@@ -1,0 +1,112 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* SFONDO */
+.sfondo{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+}
+.top-sfondo{
+  width: 100%;
+  height: 100px;
+  background-color: #2a9d8f;
+}
+.bot-sfondo{
+  width: 100%;
+  height: calc(100vh - 100px);
+  background-color: #fefae0;
+}
+
+/* MAIN */
+
+.main{
+  display: flex;
+  position: absolute;
+  top: 50px;
+  left: 150px;
+  width: 80%;
+  box-shadow: 0px 0px 10px grey;
+}
+.contatti{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 500px;
+  height: 90vh;
+  background-color: #fff;
+}
+.chat{
+  position: relative;
+  display: flex;
+  width: 80%;
+  height: 90vh;
+  background-image: url(img/sfondo-whatsapp.jpg);
+}
+
+/* LISTA CONTATTI */
+
+.account{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background-color: #ced4da;
+}
+.account img{
+  width: 45px;
+  height: 45px;
+  margin-left: 20px;
+  border-radius: 50%;
+}
+.icone i{
+  color: #6c757d;
+  font-size: 1.2em;
+  padding-right: 40px;
+}
+
+.ricerca{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background-color: #dee2e6;
+}
+#ricerca{
+  width: 80%;
+  height: 40px;
+  border-radius: 50px;
+  font-size: 12px;
+  background-color: #fff;
+  background-image: url(img/search.png);
+  background-size: 20px;
+  background-position: 15px 8px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
+
+/* CHAT */
+
+.utente{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background-color: #ced4da;
+}
+.invio{
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background-color: #ced4da;
+}
