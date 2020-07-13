@@ -42,6 +42,7 @@
 .chat{
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   width: 80%;
   height: 90vh;
   background-image: url(img/sfondo-whatsapp.jpg);
@@ -92,15 +93,38 @@
 }
 
 /* CHAT */
-
+/* utente */
 .utente{
   display: flex;
+  position: relative;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 60px;
   background-color: #e5e5e5;
 }
+/* messaggi */
+.messaggi{
+  width: 100%;
+  height: calc(100vh - 214px);
+  top: 60px;
+  position: absolute;
+/* }
+.bianchi{ */
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+#bianco{
+  padding: 5px 40px 5px 15px;
+  border-radius: 20px;
+  margin: 20px;
+  background-color: #fff;
+  font-size: 20px;
+
+}
+/* invio */
 .invio{
   position: absolute;
   bottom: 0;
@@ -129,5 +153,4 @@
   margin: 0 20px;
   border-radius: 50%;
   background-color: #2a9d8f;
-
 }
