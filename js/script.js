@@ -1,7 +1,10 @@
 
 function addSendListner(){
- var target = $('#messaggio');
+ var target = $('#messaggio-input');
  target.keyup(sendKeyUp);
+
+ var button = $('#invio');
+ button.click(sendClick);
 };
 
 function sendKeyUp(event){
@@ -18,12 +21,21 @@ function sendKeyUp(event){
 
 };
 
+function sendClick(){
+  var input = $('#messaggio-input');
+  var txt = input.val();
+
+  input.val('');
+
+  sendMessage(txt);
+}
+
 function sendMessage(txt){
   var template = $('#template-messaggi-inviati > div').clone();
-  var target = $('#verde');
+  var target = $('#messaggi');
 
-  template.find('#testo').txt(txt);
-  template.find('#orario').text(getHour());
+  template.find('#testo').html(txt);
+  template.find('#orario').html(getHour());
 
   target.append(template);
 };
