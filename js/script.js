@@ -1,4 +1,4 @@
-
+// INVIO MESSAGGI MILESTONE 1
 function addSendListner(){
  var target = $('#messaggio-input');
  target.keyup(sendKeyUp);
@@ -17,8 +17,8 @@ function sendKeyUp(event){
     input.val('');
 
     sendMessage(txt);
+    setTimeout(sendAnswer, 1000);
   }
-
 };
 
 function sendClick(){
@@ -28,6 +28,7 @@ function sendClick(){
   input.val('');
 
   sendMessage(txt);
+  setTimeout(sendAnswer, 1000);
 }
 
 function sendMessage(txt){
@@ -45,10 +46,32 @@ function getHour(){
   return ora.getHours() + ':' + ora.getMinutes();
 };
 
+// MILESTONE 2
+
+//  l'interlocutore manderà un 'ok' come risposta
+
+function sendAnswer(){
+  var template = $('#template-messaggi-ricevuti > div').clone();
+  var target = $('#messaggi');
+
+  template.find('#testo').html('ok');
+  template.find('#orario').html(getHour());
+
+  target.append(template);
+}
+
+// la risposta arriva dopo l'invio del messaggio, dopo un secondo
+// FATTO
+
+// function setTimeout(sendAnswer, 1000){
+//
+// }
+
+
+
+
 function init(){
-
   addSendListner();
-
 };
 
 $(document).ready(init);
