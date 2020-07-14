@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 *{
+  font-family: 'Indie Flower', cursive;
   margin:0;
   padding: 0;
   box-sizing: border-box;
@@ -64,6 +66,9 @@
   margin-left: 20px;
   border-radius: 50%;
 }
+i{
+  cursor: pointer;
+}
 .icone i{
   color: #6c757d;
   font-size: 1.2em;
@@ -92,6 +97,40 @@
   padding: 12px 20px 12px 40px;
 }
 
+/* LISTA */
+
+.lista{
+  width: 100%;
+  height: 100%;
+
+}
+.contatto{
+  display: flex;
+  align-items: center;
+
+  height: 70px;
+  padding-top: 10px;
+
+  border-bottom: 1px solid grey;
+}
+.img-utente img{
+  width: 50px;
+  height: 50px;
+  margin-left: 20px;
+  border-radius: 50%;
+}
+.info-contatto span{
+  display: block;
+  font-size: 1.3em;
+  margin-left: 15px;
+}
+.info-contatto small{
+
+  margin-left: 15px;
+}
+
+
+
 /* CHAT */
 /* utente */
 .utente{
@@ -103,34 +142,96 @@
   height: 60px;
   background-color: #e5e5e5;
 }
+.utente img{
+  width: 45px;
+  height: 45px;
+  margin-left: 20px;
+  border-radius: 50%;
+}
+.id-utente{
+  display: flex;
+  align-items: center;
+}
+.id-utente span{
+  margin-left: 20px;
+  font-size: 20px;
+}
 /* messaggi */
 .messaggi{
   width: 100%;
   height: calc(100vh - 214px);
   top: 60px;
   position: absolute;
-/* }
-.bianchi{ */
+}
+.bianchi{
+  width: 100%;
   display: flex;
   justify-content: flex-start;
-  flex-wrap: wrap;
-  align-items: flex-end;
+}
+.verdi{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 #bianco{
+  position: relative;
   padding: 5px 40px 5px 15px;
   border-radius: 20px;
-  margin: 20px;
+  margin: 12px;
   background-color: #fff;
   font-size: 20px;
-
 }
+#verde{
+  position: relative;
+  padding: 5px 40px 5px 15px;
+  border-radius: 20px;
+  margin: 12px;
+  background-color: #80b918;
+  font-size: 20px;
+}
+.orario{
+  font-size: 12px;
+  position: absolute;
+  bottom: 3px;
+  right: 5px;
+}
+/* menu a tendina */
+.opzioni{
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+}
+.opzioni i{
+  display: none;
+}
+.menu{
+  display: none;
+  padding: 15px 0;
+  position: absolute;
+  top: 40px;
+  right: -10px;
+
+  background: white;
+  border-radius: 15px;
+
+  width: 140px;
+  font-size: 15px;
+}
+
+.menu:hover,
+.fas .fa-chevron-down .opzioni:hover{
+  display:block;
+}
+
 /* invio */
 .invio{
   position: absolute;
   bottom: 0;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   width: 100%;
   height: 60px;
   background-color: #e5e5e5;
