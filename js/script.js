@@ -67,10 +67,31 @@ function sendAnswer(){
 //
 // }
 
+// L'utente ricerca un contatto tra la sua lista contatti
+
+function ricercaContatto(){
+  var input = $('#ricerca');
+  var filter = input.value.toUpperCase();
+  var contatto = getElementById('contatto');
+  var span = contatto.getElementsByTagName('span');
+
+  for (var i = 0; i < span.length; i++) {
+    var a = span[i].getElementsById('#nome')[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      span[i].style.display = "";
+    } else {
+      span[i].style.display = "none";
+    }
+  }
+}
+
+
 
 
 
 function init(){
+  ricercaContatto();
   addSendListner();
 };
 
