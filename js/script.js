@@ -48,8 +48,6 @@ function getHour(){
 
 // MILESTONE 2
 
-//  l'interlocutore manderà un 'ok' come risposta
-
 function sendAnswer(){
   var template = $('#template-messaggi-ricevuti > div').clone();
   var target = $('#messaggi');
@@ -60,38 +58,35 @@ function sendAnswer(){
   target.append(template);
 }
 
-// la risposta arriva dopo l'invio del messaggio, dopo un secondo
-// FATTO
-
-// function setTimeout(sendAnswer, 1000){
-//
-// }
-
 // L'utente ricerca un contatto tra la sua lista contatti
+function addSearchListner(){
+  var target = $('#ricerca');
+  target.keyup(searchKeyUp);
+}
 
-function ricercaContatto(){
-  var input = $('#ricerca');
-  var filter = input.value.toUpperCase();
-  var contatto = getElementById('contatto');
-  var span = contatto.getElementsByTagName('span');
+function searchKeyUp(){
+  var input = $(this);
+  var txt = input.val();
 
-  for (var i = 0; i < span.length; i++) {
-    var a = span[i].getElementsById('#nome')[0];
-    txtValue = a.textContent || a.innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      span[i].style.display = "";
+  var contacts = $('. lista .contatto');
+  contacts.each(function (){
+
+    var contact = $(this);
+    var name = contact.find('.concact-name').text();
+
+    // name.indexOf(txt);
+    if (name.includes(txt)) {
+      conctact.show();
     } else {
-      span[i].style.display = "none";
+      concact.hide();
     }
-  }
+  })
+
 }
 
 
-
-
-
 function init(){
-  ricercaContatto();
+  searchKeyUp();
   addSendListner();
 };
 
