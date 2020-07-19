@@ -41,6 +41,12 @@
   height: 90vh;
   background-color: #fff;
 }
+#contatto{
+  cursor: pointer;
+}
+.contatto.active{
+  background-color: #b5838d;
+}
 .chat{
   position: relative;
   display: flex;
@@ -133,6 +139,13 @@ i{
 
 /* CHAT */
 /* utente */
+#utente{
+  display: none;
+}
+#utente.active{
+  display:block;
+}
+
 .utente{
   display: flex;
   position: relative;
@@ -152,11 +165,18 @@ i{
   display: flex;
   align-items: center;
 }
+
 .id-utente span{
   margin-left: 20px;
   font-size: 20px;
 }
 /* messaggi */
+#messaggi{
+  display: none;
+}
+#messaggi.active{
+  display: block;
+}
 .messaggi{
   width: 100%;
   height: calc(100vh - 214px);
@@ -196,20 +216,20 @@ i{
   right: 5px;
 }
 /* menu a tendina */
-.opzioni{
-  position: absolute;
+
+/* .fas .fa-chevron-down{
+  display: none;
   right: 10px;
   bottom: 8px;
-}
-.opzioni i{
-  display: none;
-}
+} */
+
+
 .menu{
   display: none;
-  padding: 15px 0;
+  padding: 15px 5px;
   position: absolute;
-  top: 40px;
-  right: -10px;
+  top: 50px;
+  line-height: 30px;
 
   background: white;
   border-radius: 15px;
@@ -218,8 +238,8 @@ i{
   font-size: 15px;
 }
 
-.menu:hover,
-.fas .fa-chevron-down .opzioni:hover{
+#bianco:hover .menu,
+#verde:hover .menu{
   display:block;
 }
 

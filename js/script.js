@@ -16,7 +16,7 @@ function sendKeyUp(event){
 
     input.val('');
 
-    sendMessage(txt);
+    sendMessage(txt, '#verde');
     setTimeout(sendAnswer, 1000);
   }
 };
@@ -27,14 +27,15 @@ function sendClick(){
 
   input.val('');
 
-  sendMessage(txt);
+  sendMessage(txt, '#verde');
   setTimeout(sendAnswer, 1000);
 }
 
-function sendMessage(txt){
-  var template = $('#template-messaggi-inviati > div').clone();
+function sendMessage(txt, type){
+  var template = $('#template-messaggi > div').clone();
   var target = $('#messaggi');
 
+  template.addClass(type);
   template.find('#testo').html(txt);
   template.find('#orario').html(getHour());
 
@@ -65,28 +66,55 @@ function addSearchListner(){
 }
 
 function searchKeyUp(){
+
   var input = $(this);
   var txt = input.val();
 
-  var contacts = $('. lista .contatto');
+  var contacts = $('.lista .contatto');
   contacts.each(function (){
 
     var contact = $(this);
-    var name = contact.find('.concact-name').text();
+    var name = contact.find('#nome').text();
 
     // name.indexOf(txt);
-    if (name.includes(txt)) {
-      conctact.show();
+    if (name.toLowerCase().includes(txt.toLowerCase())) {
+      contact.show();
     } else {
-      concact.hide();
+      contact.hide();
     }
   })
 
 }
+// MILESTONE 3
+function addContactClickListener(){
+  var contatti = $('.lista .contatto');
+  contatti.click(contactClick);
+}
 
+function contactClick(){
+  var contattoSelezionato = $(this);
+  var id = contattoSelezionato.data('id');
+  var contatti = $('.lista .contatto');
+
+  var conversazione = $('#messaggi');
+  var selezionaConversazione = $('#messaggi[data-id= ' + id + ' ]');
+
+  var utente = $('#utente');
+  var selezionaUtente = $('#utente[data-id=' + id + ']');
+
+  contatti.removeClass('active');
+  contattoSelezionato.addClass('active');
+
+  conversazione.removeClass('active');
+  selezionaConversazione.addClass('active');
+
+  utente.removeClass('active');
+  selezionaUtente.addClass('active');
+}
 
 function init(){
-  searchKeyUp();
+  addContactClickListener();
+  addSearchListner();
   addSendListner();
 };
 
