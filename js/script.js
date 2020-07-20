@@ -32,7 +32,7 @@ function sendClick(){
 }
 
 function sendMessage(txt, type){
-  var template = $('#template-messaggi > div').clone();
+  var template = $('#template-messaggi-inviati > div').clone();
   var target = $('#messaggi');
 
   template.addClass(type);
@@ -86,6 +86,7 @@ function searchKeyUp(){
 
 }
 // MILESTONE 3
+
 function addContactClickListener(){
   var contatti = $('.lista .contatto');
   contatti.click(contactClick);
